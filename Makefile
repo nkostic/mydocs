@@ -25,7 +25,25 @@ clean:
 install:
 	go install ./cmd/mydocs
 
-help:
-	@echo "Available commands: build, run, test, bench, lint, fmt, vet, clean, install"
+install-global:
+	sudo cp mydocs /usr/local/bin/mydocs
+	sudo chmod +x /usr/local/bin/mydocs
 
-.PHONY: build run test bench lint fmt vet clean install help
+uninstall:
+	rm -f $(GOPATH)/bin/mydocs /usr/local/bin/mydocs
+
+help:
+	@echo "Available commands:"
+	@echo "  build          Build the binary"
+	@echo "  run            Run the application"
+	@echo "  test           Run tests"
+	@echo "  bench          Run benchmarks"
+	@echo "  lint           Run linter"
+	@echo "  fmt            Format code"
+	@echo "  vet            Run go vet"
+	@echo "  clean          Remove built binary"
+	@echo "  install        Install to GOPATH/bin (requires Go env)"
+	@echo "  install-global Install to /usr/local/bin (system-wide)"
+	@echo "  uninstall      Remove installed binary"
+
+.PHONY: build run test bench lint fmt vet clean install install-global uninstall help

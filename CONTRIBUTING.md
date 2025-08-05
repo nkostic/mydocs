@@ -57,13 +57,21 @@ By participating in this project, you agree to abide by our Code of Conduct:
    make build
    ```
 
-3. **Run tests**:
+3. **Install globally (optional)**:
+
+   ```bash
+   make install-global
+   ```
+
+   This allows you to use `mydocs` from anywhere instead of `./mydocs`.
+
+4. **Run tests**:
 
    ```bash
    make test
    ```
 
-4. **Check code quality**:
+5. **Check code quality**:
    ```bash
    make lint
    make vet

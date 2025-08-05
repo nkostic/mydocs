@@ -16,42 +16,88 @@ A console-based journaling utility written in Go to help you quickly generate da
 - 🔄 **Duplicate prevention** - won't overwrite existing entries
 - 📊 **Comprehensive testing** with benchmarks
 
-## 🚀 Quick Start
-
-### Build the application
+## ⚡ Quick Install
 
 ```bash
+# Clone and install globally
+git clone https://github.com/nkostic/mydocs.git
+cd mydocs
+make build
+make install-global
+
+# Now use from anywhere
+mydocs new
+mydocs help
+```
+
+## 🚀 Quick Start
+
+### Installation Options
+
+#### Option 1: Install Globally (Recommended)
+
+```bash
+# Build and install to your system PATH
+make build
+make install-global
+```
+
+Now you can use `mydocs` from anywhere:
+
+```bash
+mydocs new
+mydocs publish
+mydocs help
+```
+
+#### Option 2: Install to Go PATH
+
+```bash
+# Install to $GOPATH/bin (requires Go environment)
+make install
+```
+
+Make sure `$GOPATH/bin` is in your PATH.
+
+#### Option 3: Build and Use Locally
+
+```bash
+# Build locally
 make build
 ```
+
+Then use with `./mydocs`
+
+### Basic Usage
 
 ### Create a journal entry for today
 
 ```bash
-./mydocs new
+mydocs new
 ```
 
 ### Create a journal entry for a specific date
 
 ```bash
-./mydocs new 2025-12-25
+mydocs new 2025-12-25
 ```
 
 ### Update the home index
 
 ```bash
-./mydocs publish
+mydocs publish
 ```
 
 ### Show version information
 
 ```bash
-./mydocs version
+mydocs version
 ```
 
 ### Show help
 
 ```bash
-./mydocs help
+mydocs help
 ```
 
 ## 📁 Project Structure
@@ -114,17 +160,17 @@ make bench
 
 ```bash
 # Create entry for today
-./mydocs new
+mydocs new
 
 # Create entry for Christmas
-./mydocs new 2025-12-25
+mydocs new 2025-12-25
 ```
 
 ### Publishing to index
 
 ```bash
 # Update home.md with all journal entries
-./mydocs publish
+mydocs publish
 ```
 
 This will create a `home.md` file with links to all your journal entries, sorted by date (newest first).
