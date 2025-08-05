@@ -1,0 +1,2 @@
+- [2025-12-31/Wednesday](2025-12-31/Wednesday.md)
+- [2025-08-05/Tuesday](2025-08-05/Tuesday.md)
